@@ -1,0 +1,32 @@
+
+{
+    "User" : {
+        UserData goes here
+        "comparisonRecordKeys" : list of 'PostId'
+    }
+    
+    
+    }
+    
+    "Post" : {
+        postId : comparisonRecord
+    }
+    
+    "Post-CreatorTable" : {
+        userId {
+            list of "PublicPost/PrivatePost" + PostId
+        }
+    }
+    
+    "User-VotablePublicPostTable" : {
+        UserId : {
+            postIds (for vote)
+        }
+    }
+    
+    "PublicPost-VotableUserTable" : {
+        PostId : {
+            userIds (This is for voter)
+        }
+    }
+}

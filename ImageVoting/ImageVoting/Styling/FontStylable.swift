@@ -11,15 +11,31 @@ import UIKit
 
 protocol FontStylable {
     func getTitleFont() -> UIFont
+    func getSubTitleFont() -> UIFont
     func getNormalFont() -> UIFont
+    func getSubNormalFont() -> UIFont
+    func getSmallText() -> UIFont
 }
 
 
 extension FontStylable {
-//    func getTitleFont() -> UIFont {
-//        
-//    }
-//    func getNormalFont() -> UIFont {
-//        
-//    }
+    func getTitleFont() -> UIFont {
+        return UIFont(name: "RockoFLF-Bold", size: 25)!
+    }
+    
+    func getSubTitleFont() -> UIFont {
+        return UIFont(name: "RockoFLF-Bold", size: 25)!
+    }
+    
+    func getNormalFont() -> UIFont {
+        return UIFont(name: "RockoFLF", size: 25)!
+    }
+    
+    func getSubNormalFont() -> UIFont {
+        return UIFont(name: "RockoFLF", size: 25)!
+    }
+    
+    func getSmallText() -> UIFont {
+        return UIFont(name: "RockoFLF", size: 18)!
+    }
 }

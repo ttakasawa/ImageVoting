@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        UINavigationBar.appearance().barTintColor = UIColor(red: 29.0/255.0, green: 48.0/255.0, blue: 118.0/255.0, alpha: 1)
+        UINavigationBar.appearance().tintColor = UIColor(red:14.0/255.0, green:211.0/255.0, blue:140.0/255.0, alpha:255.0/255.0)
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        
+        FirebaseApp.configure()
+        
+        window = UIWindow.init(frame: UIScreen.main.bounds)
+        window?.backgroundColor = UIColor.white
+        window?.makeKeyAndVisible()
+        
+        
+        self.startApp()
+        
         return true
     }
 
@@ -91,3 +108,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+extension AppDelegate {
+    
+    func isOnBoardTest() -> Bool{
+        return false
+    }
+    
+    func startApp(){
+        if self.isOnBoardTest(){
+            toOnBoard()
+        }else{
+            loginIfPossible()
+        }
+    }
+    
+    func toOnBoard(){
+        let loginScreen: LoginViewController = LoginViewController(network: Global.network)
+        let navController = UINavigationController(rootViewController: loginScreen)
+        
+        window?.rootViewController = navController
+    }
+    
+    func toHome(){
+        let homeScreen: HomeViewController = HomeViewController(builder: HomeViewControllerBuilder.vote, network: Global.network)
+        let navController = UINavigationController(rootViewController: homeScreen)
+        
+        window?.rootViewController = navController
+    }
+    
+    func loginIfPossible(){
+        if Global.network.firUserId != nil {
+            
+            self.toHome()
+            
+        }else{
+            
+            self.toOnBoard()
+        }
+    }
+}

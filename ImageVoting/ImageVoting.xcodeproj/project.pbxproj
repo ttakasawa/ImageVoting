@@ -7,9 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		108F24A5C04FD5F42DEF05D4 /* Pods_ImageVoting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DCC80B94A415C29F533E3D /* Pods_ImageVoting.framework */; };
+		21770C73F0A80EAD7A6B6B6D /* Pods_ImageVotingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08C44EF5EBD98747987795B /* Pods_ImageVotingTests.framework */; };
+		B22C852021D07F1C00476CE5 /* HTTPRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C851F21D07F1C00476CE5 /* HTTPRequestHandler.swift */; };
+		B22C852521D082B000476CE5 /* HTTPEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C852421D082B000476CE5 /* HTTPEndpoint.swift */; };
+		B22C852821D08B6400476CE5 /* PublicPostEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C852721D08B6400476CE5 /* PublicPostEndpoint.swift */; };
+		B22C852C21D0B6E300476CE5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C852B21D0B6E300476CE5 /* LoginViewController.swift */; };
+		B22C852F21D0B7D100476CE5 /* InputTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C852E21D0B7D100476CE5 /* InputTextfield.swift */; };
+		B22C853121D0BE3700476CE5 /* ButtonStylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C853021D0BE3700476CE5 /* ButtonStylable.swift */; };
+		B22C853521D2274E00476CE5 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C853421D2274E00476CE5 /* ResultsTableViewController.swift */; };
+		B22C853821D2280100476CE5 /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C853721D2280100476CE5 /* ResultsTableViewCell.swift */; };
+		B22C853A21D3931F00476CE5 /* DataModel.json in Resources */ = {isa = PBXBuildFile; fileRef = B22C853921D3931F00476CE5 /* DataModel.json */; };
+		B22C853F21D3C74300476CE5 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C853E21D3C74300476CE5 /* Queue.swift */; };
+		B22C854121D3C9FF00476CE5 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C854021D3C9FF00476CE5 /* LinkedList.swift */; };
+		B22C854421D67BC100476CE5 /* PostEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C854321D67BC100476CE5 /* PostEndpoint.swift */; };
+		B22C854621D7232500476CE5 /* ImageLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C854521D7232500476CE5 /* ImageLoadable.swift */; };
+		B22C854821D7BE2C00476CE5 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C854721D7BE2C00476CE5 /* ContactsTableViewController.swift */; };
+		B22C854A21D7BE7100476CE5 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C854921D7BE7100476CE5 /* ContactsTableViewCell.swift */; };
+		B23D6B4121CB3E6300E562AD /* HomeViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D6B4021CB3E6300E562AD /* HomeViewControllerBuilder.swift */; };
+		B23D6B4421CB529300E562AD /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D6B4321CB529300E562AD /* ModalViewController.swift */; };
+		B23D6B4621CC809400E562AD /* PublicVoteEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D6B4521CC809400E562AD /* PublicVoteEndpoint.swift */; };
+		B23D6B4821CE162B00E562AD /* StorageEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D6B4721CE162B00E562AD /* StorageEndpoint.swift */; };
 		B2C6017521C59A290028211B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C6017421C59A290028211B /* AppDelegate.swift */; };
-		B2C6017721C59A290028211B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C6017621C59A290028211B /* ViewController.swift */; };
-		B2C6017A21C59A290028211B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C6017821C59A290028211B /* Main.storyboard */; };
+		B2C6017721C59A290028211B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C6017621C59A290028211B /* HomeViewController.swift */; };
 		B2C6017D21C59A290028211B /* ImageVoting.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2C6017B21C59A290028211B /* ImageVoting.xcdatamodeld */; };
 		B2C6017F21C59A2E0028211B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2C6017E21C59A2E0028211B /* Assets.xcassets */; };
 		B2C6018221C59A2E0028211B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C6018021C59A2E0028211B /* LaunchScreen.storyboard */; };
@@ -23,6 +43,24 @@
 		B2C601A721C5A7F90028211B /* Stylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C601A621C5A7F90028211B /* Stylable.swift */; };
 		B2C601A921C5A83E0028211B /* FontStylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C601A821C5A83E0028211B /* FontStylable.swift */; };
 		B2C601AB21C5A84E0028211B /* ColorStylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C601AA21C5A84E0028211B /* ColorStylable.swift */; };
+		B2C601AE21C5BECA0028211B /* FirebaseEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C601AD21C5BECA0028211B /* FirebaseEndpoint.swift */; };
+		B2C601B121C6C3E50028211B /* UserEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C601B021C6C3E50028211B /* UserEndpoint.swift */; };
+		B2C601B421C6C6090028211B /* ThemeSelectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C601B321C6C6090028211B /* ThemeSelectable.swift */; };
+		B2C601B621C6C62F0028211B /* UserNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C601B521C6C62F0028211B /* UserNetwork.swift */; };
+		B2C601B821C6D72C0028211B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2C601B721C6D72B0028211B /* GoogleService-Info.plist */; };
+		B2C601BC21C6DC2C0028211B /* AnimatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C601BB21C6DC2C0028211B /* AnimatedButton.swift */; };
+		B2C601BE21C6DCD30028211B /* PostButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C601BD21C6DCD30028211B /* PostButton.swift */; };
+		B2C601C421C6DFDB0028211B /* RockoUltraFLF-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2C601C021C6DFD70028211B /* RockoUltraFLF-Bold.ttf */; };
+		B2C601C521C6DFDB0028211B /* RockoFLF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2C601C121C6DFD90028211B /* RockoFLF.ttf */; };
+		B2C601C621C6DFDB0028211B /* RockoUltraFLF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2C601C221C6DFDA0028211B /* RockoUltraFLF.ttf */; };
+		B2C601C721C6DFDB0028211B /* RockoFLF-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2C601C321C6DFDB0028211B /* RockoFLF-Bold.ttf */; };
+		B2C601CA21C6E5500028211B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C601C921C6E5500028211B /* CircleView.swift */; };
+		B2C601CC21C6E5E00028211B /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C601CB21C6E5E00028211B /* CircleImageView.swift */; };
+		B2C601CF21C6E7CA0028211B /* BasicLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C601CE21C6E7CA0028211B /* BasicLabel.swift */; };
+		B2C601D121C707DD0028211B /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C601D021C707DD0028211B /* LargeButton.swift */; };
+		B2C601D421C722EE0028211B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C601D321C722EE0028211B /* ProfileViewController.swift */; };
+		B2C601D721C734440028211B /* VoteAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C601D621C734440028211B /* VoteAlertViewController.swift */; };
+		B2C601DB21C83A1D0028211B /* DeviceSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C601DA21C83A1D0028211B /* DeviceSize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +74,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04DCC80B94A415C29F533E3D /* Pods_ImageVoting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageVoting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12B54B8EE8CFA4934DA12E2C /* Pods-ImageVotingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageVotingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageVotingTests/Pods-ImageVotingTests.release.xcconfig"; sourceTree = "<group>"; };
+		1E29F16D219FA40A2DD81965 /* Pods-ImageVotingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageVotingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageVotingTests/Pods-ImageVotingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5BDC47CEE580B453D47B04F5 /* Pods-ImageVoting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageVoting.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageVoting/Pods-ImageVoting.release.xcconfig"; sourceTree = "<group>"; };
+		8C695A9151DEE0CF0F3A95BD /* Pods-ImageVoting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageVoting.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageVoting/Pods-ImageVoting.debug.xcconfig"; sourceTree = "<group>"; };
+		A08C44EF5EBD98747987795B /* Pods_ImageVotingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageVotingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B22C851F21D07F1C00476CE5 /* HTTPRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestHandler.swift; sourceTree = "<group>"; };
+		B22C852421D082B000476CE5 /* HTTPEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPEndpoint.swift; sourceTree = "<group>"; };
+		B22C852721D08B6400476CE5 /* PublicPostEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicPostEndpoint.swift; sourceTree = "<group>"; };
+		B22C852B21D0B6E300476CE5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B22C852E21D0B7D100476CE5 /* InputTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextfield.swift; sourceTree = "<group>"; };
+		B22C853021D0BE3700476CE5 /* ButtonStylable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStylable.swift; sourceTree = "<group>"; };
+		B22C853421D2274E00476CE5 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
+		B22C853721D2280100476CE5 /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
+		B22C853921D3931F00476CE5 /* DataModel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DataModel.json; sourceTree = "<group>"; };
+		B22C853E21D3C74300476CE5 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		B22C854021D3C9FF00476CE5 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		B22C854321D67BC100476CE5 /* PostEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEndpoint.swift; sourceTree = "<group>"; };
+		B22C854521D7232500476CE5 /* ImageLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadable.swift; sourceTree = "<group>"; };
+		B22C854721D7BE2C00476CE5 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		B22C854921D7BE7100476CE5 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
+		B23D6B4021CB3E6300E562AD /* HomeViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerBuilder.swift; sourceTree = "<group>"; };
+		B23D6B4321CB529300E562AD /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		B23D6B4521CC809400E562AD /* PublicVoteEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicVoteEndpoint.swift; sourceTree = "<group>"; };
+		B23D6B4721CE162B00E562AD /* StorageEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageEndpoint.swift; sourceTree = "<group>"; };
 		B2C6017121C59A290028211B /* ImageVoting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageVoting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C6017421C59A290028211B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B2C6017621C59A290028211B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B2C6017921C59A290028211B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B2C6017621C59A290028211B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B2C6017C21C59A290028211B /* ImageVoting.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ImageVoting.xcdatamodel; sourceTree = "<group>"; };
 		B2C6017E21C59A2E0028211B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2C6018121C59A2E0028211B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +118,24 @@
 		B2C601A621C5A7F90028211B /* Stylable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylable.swift; sourceTree = "<group>"; };
 		B2C601A821C5A83E0028211B /* FontStylable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStylable.swift; sourceTree = "<group>"; };
 		B2C601AA21C5A84E0028211B /* ColorStylable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStylable.swift; sourceTree = "<group>"; };
+		B2C601AD21C5BECA0028211B /* FirebaseEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseEndpoint.swift; sourceTree = "<group>"; };
+		B2C601B021C6C3E50028211B /* UserEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndpoint.swift; sourceTree = "<group>"; };
+		B2C601B321C6C6090028211B /* ThemeSelectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectable.swift; sourceTree = "<group>"; };
+		B2C601B521C6C62F0028211B /* UserNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetwork.swift; sourceTree = "<group>"; };
+		B2C601B721C6D72B0028211B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B2C601BB21C6DC2C0028211B /* AnimatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedButton.swift; sourceTree = "<group>"; };
+		B2C601BD21C6DCD30028211B /* PostButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostButton.swift; sourceTree = "<group>"; };
+		B2C601C021C6DFD70028211B /* RockoUltraFLF-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RockoUltraFLF-Bold.ttf"; sourceTree = "<group>"; };
+		B2C601C121C6DFD90028211B /* RockoFLF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RockoFLF.ttf; sourceTree = "<group>"; };
+		B2C601C221C6DFDA0028211B /* RockoUltraFLF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RockoUltraFLF.ttf; sourceTree = "<group>"; };
+		B2C601C321C6DFDB0028211B /* RockoFLF-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RockoFLF-Bold.ttf"; sourceTree = "<group>"; };
+		B2C601C921C6E5500028211B /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		B2C601CB21C6E5E00028211B /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		B2C601CE21C6E7CA0028211B /* BasicLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicLabel.swift; sourceTree = "<group>"; };
+		B2C601D021C707DD0028211B /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
+		B2C601D321C722EE0028211B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B2C601D621C734440028211B /* VoteAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteAlertViewController.swift; sourceTree = "<group>"; };
+		B2C601DA21C83A1D0028211B /* DeviceSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				108F24A5C04FD5F42DEF05D4 /* Pods_ImageVoting.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,18 +151,124 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21770C73F0A80EAD7A6B6B6D /* Pods_ImageVotingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13250F870295ED78951C96DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8C695A9151DEE0CF0F3A95BD /* Pods-ImageVoting.debug.xcconfig */,
+				5BDC47CEE580B453D47B04F5 /* Pods-ImageVoting.release.xcconfig */,
+				1E29F16D219FA40A2DD81965 /* Pods-ImageVotingTests.debug.xcconfig */,
+				12B54B8EE8CFA4934DA12E2C /* Pods-ImageVotingTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B22C851D21D07E5D00476CE5 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				B22C851F21D07F1C00476CE5 /* HTTPRequestHandler.swift */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		B22C851E21D07E9000476CE5 /* ClientSideNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				B2C6019D21C59F050028211B /* NetworkManager.swift */,
+				B2C601B221C6C5CF0028211B /* Network */,
+			);
+			path = ClientSideNetwork;
+			sourceTree = "<group>";
+		};
+		B22C852121D0819E00476CE5 /* HTTPEndpoints */ = {
+			isa = PBXGroup;
+			children = (
+				B22C852421D082B000476CE5 /* HTTPEndpoint.swift */,
+			);
+			path = HTTPEndpoints;
+			sourceTree = "<group>";
+		};
+		B22C852921D08B6B00476CE5 /* PublicComparisons */ = {
+			isa = PBXGroup;
+			children = (
+				B23D6B4521CC809400E562AD /* PublicVoteEndpoint.swift */,
+				B22C852721D08B6400476CE5 /* PublicPostEndpoint.swift */,
+			);
+			path = PublicComparisons;
+			sourceTree = "<group>";
+		};
+		B22C852A21D0B6C700476CE5 /* OnBoardingProcess */ = {
+			isa = PBXGroup;
+			children = (
+				B22C852B21D0B6E300476CE5 /* LoginViewController.swift */,
+			);
+			path = OnBoardingProcess;
+			sourceTree = "<group>";
+		};
+		B22C852D21D0B7BD00476CE5 /* Textfields */ = {
+			isa = PBXGroup;
+			children = (
+				B22C852E21D0B7D100476CE5 /* InputTextfield.swift */,
+			);
+			path = Textfields;
+			sourceTree = "<group>";
+		};
+		B22C853621D227EA00476CE5 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				B22C853721D2280100476CE5 /* ResultsTableViewCell.swift */,
+				B22C854921D7BE7100476CE5 /* ContactsTableViewCell.swift */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
+		B22C853B21D3C71200476CE5 /* DataStructure */ = {
+			isa = PBXGroup;
+			children = (
+				B22C853E21D3C74300476CE5 /* Queue.swift */,
+				B22C854021D3C9FF00476CE5 /* LinkedList.swift */,
+			);
+			path = DataStructure;
+			sourceTree = "<group>";
+		};
+		B22C854221D3CE1F00476CE5 /* Scheme */ = {
+			isa = PBXGroup;
+			children = (
+				B22C853921D3931F00476CE5 /* DataModel.json */,
+			);
+			path = Scheme;
+			sourceTree = "<group>";
+		};
+		B23D6B3F21CB3E4300E562AD /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				B23D6B4021CB3E6300E562AD /* HomeViewControllerBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		B23D6B4221CB527D00E562AD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B23D6B4321CB529300E562AD /* ModalViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		B2C6016821C59A290028211B = {
 			isa = PBXGroup;
 			children = (
 				B2C6017321C59A290028211B /* ImageVoting */,
 				B2C6018B21C59A2E0028211B /* ImageVotingTests */,
 				B2C6017221C59A290028211B /* Products */,
+				13250F870295ED78951C96DB /* Pods */,
+				C0D0CEAAD65705B90466F76F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,16 +284,18 @@
 		B2C6017321C59A290028211B /* ImageVoting */ = {
 			isa = PBXGroup;
 			children = (
+				B2C601D221C7227E0028211B /* ViewControllers */,
+				B2C601BF21C6DFC30028211B /* Fonts */,
+				B2C601B921C6DBFE0028211B /* UIComopenets */,
 				B2C601A521C5A7E90028211B /* Styling */,
 				B2C6019821C59AD20028211B /* Models */,
 				B2C6019721C59AC40028211B /* NetworkLayer */,
 				B2C6017421C59A290028211B /* AppDelegate.swift */,
-				B2C6017621C59A290028211B /* ViewController.swift */,
-				B2C6017821C59A290028211B /* Main.storyboard */,
 				B2C6017E21C59A2E0028211B /* Assets.xcassets */,
 				B2C6018021C59A2E0028211B /* LaunchScreen.storyboard */,
 				B2C6018321C59A2E0028211B /* Info.plist */,
 				B2C6017B21C59A290028211B /* ImageVoting.xcdatamodeld */,
+				B2C601B721C6D72B0028211B /* GoogleService-Info.plist */,
 			);
 			path = ImageVoting;
 			sourceTree = "<group>";
@@ -123,10 +312,10 @@
 		B2C6019721C59AC40028211B /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
-				B2C6019D21C59F050028211B /* NetworkManager.swift */,
+				B22C851E21D07E9000476CE5 /* ClientSideNetwork */,
+				B22C851D21D07E5D00476CE5 /* HTTP */,
 				B2C6019F21C59F460028211B /* GlobalNetwork.swift */,
-				B2C601A121C59FEA0028211B /* ImageVotable.swift */,
-				B2C601A321C5A05A0028211B /* ImagePostable.swift */,
+				B2C601AC21C5BEB50028211B /* Endpoints */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -134,6 +323,8 @@
 		B2C6019821C59AD20028211B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B22C854221D3CE1F00476CE5 /* Scheme */,
+				B22C853B21D3C71200476CE5 /* DataStructure */,
 				B2C6019921C59AEC0028211B /* UserData.swift */,
 				B2C6019B21C59EB20028211B /* ComparisonRecord.swift */,
 			);
@@ -146,8 +337,125 @@
 				B2C601A621C5A7F90028211B /* Stylable.swift */,
 				B2C601A821C5A83E0028211B /* FontStylable.swift */,
 				B2C601AA21C5A84E0028211B /* ColorStylable.swift */,
+				B22C853021D0BE3700476CE5 /* ButtonStylable.swift */,
 			);
 			path = Styling;
+			sourceTree = "<group>";
+		};
+		B2C601AC21C5BEB50028211B /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				B22C852121D0819E00476CE5 /* HTTPEndpoints */,
+				B2C601AF21C6C3CF0028211B /* Endpoints */,
+				B2C601AD21C5BECA0028211B /* FirebaseEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		B2C601AF21C6C3CF0028211B /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				B22C852921D08B6B00476CE5 /* PublicComparisons */,
+				B2C601B021C6C3E50028211B /* UserEndpoint.swift */,
+				B23D6B4721CE162B00E562AD /* StorageEndpoint.swift */,
+				B22C854321D67BC100476CE5 /* PostEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		B2C601B221C6C5CF0028211B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B2C601A121C59FEA0028211B /* ImageVotable.swift */,
+				B2C601A321C5A05A0028211B /* ImagePostable.swift */,
+				B2C601B321C6C6090028211B /* ThemeSelectable.swift */,
+				B2C601B521C6C62F0028211B /* UserNetwork.swift */,
+				B22C854521D7232500476CE5 /* ImageLoadable.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B2C601B921C6DBFE0028211B /* UIComopenets */ = {
+			isa = PBXGroup;
+			children = (
+				B22C853621D227EA00476CE5 /* TableCell */,
+				B22C852D21D0B7BD00476CE5 /* Textfields */,
+				B23D6B4221CB527D00E562AD /* ViewController */,
+				B23D6B3F21CB3E4300E562AD /* Builder */,
+				B2C601CD21C6E7B30028211B /* Label */,
+				B2C601C821C6E5410028211B /* View */,
+				B2C601BA21C6DC080028211B /* Buttons */,
+				B2C601DA21C83A1D0028211B /* DeviceSize.swift */,
+			);
+			path = UIComopenets;
+			sourceTree = "<group>";
+		};
+		B2C601BA21C6DC080028211B /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				B2C601BB21C6DC2C0028211B /* AnimatedButton.swift */,
+				B2C601BD21C6DCD30028211B /* PostButton.swift */,
+				B2C601D021C707DD0028211B /* LargeButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		B2C601BF21C6DFC30028211B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B2C601C321C6DFDB0028211B /* RockoFLF-Bold.ttf */,
+				B2C601C121C6DFD90028211B /* RockoFLF.ttf */,
+				B2C601C021C6DFD70028211B /* RockoUltraFLF-Bold.ttf */,
+				B2C601C221C6DFDA0028211B /* RockoUltraFLF.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B2C601C821C6E5410028211B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B2C601C921C6E5500028211B /* CircleView.swift */,
+				B2C601CB21C6E5E00028211B /* CircleImageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B2C601CD21C6E7B30028211B /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				B2C601CE21C6E7CA0028211B /* BasicLabel.swift */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
+		B2C601D221C7227E0028211B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B22C852A21D0B6C700476CE5 /* OnBoardingProcess */,
+				B2C601D521C734210028211B /* AlertViewControllers */,
+				B2C6017621C59A290028211B /* HomeViewController.swift */,
+				B2C601D321C722EE0028211B /* ProfileViewController.swift */,
+				B22C853421D2274E00476CE5 /* ResultsTableViewController.swift */,
+				B22C854721D7BE2C00476CE5 /* ContactsTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B2C601D521C734210028211B /* AlertViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B2C601D621C734440028211B /* VoteAlertViewController.swift */,
+			);
+			path = AlertViewControllers;
+			sourceTree = "<group>";
+		};
+		C0D0CEAAD65705B90466F76F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04DCC80B94A415C29F533E3D /* Pods_ImageVoting.framework */,
+				A08C44EF5EBD98747987795B /* Pods_ImageVotingTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,9 +465,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2C6019121C59A2E0028211B /* Build configuration list for PBXNativeTarget "ImageVoting" */;
 			buildPhases = (
+				0961F7DCDFDDAF73F67515E7 /* [CP] Check Pods Manifest.lock */,
 				B2C6016D21C59A290028211B /* Sources */,
 				B2C6016E21C59A290028211B /* Frameworks */,
 				B2C6016F21C59A290028211B /* Resources */,
+				145E856AC8C3AA85F3CF886D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -174,6 +484,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2C6019421C59A2E0028211B /* Build configuration list for PBXNativeTarget "ImageVotingTests" */;
 			buildPhases = (
+				D9CC6563366153A1D08DBA1F /* [CP] Check Pods Manifest.lock */,
 				B2C6018421C59A2E0028211B /* Sources */,
 				B2C6018521C59A2E0028211B /* Frameworks */,
 				B2C6018621C59A2E0028211B /* Resources */,
@@ -231,9 +542,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2C601B821C6D72C0028211B /* GoogleService-Info.plist in Resources */,
+				B22C853A21D3931F00476CE5 /* DataModel.json in Resources */,
+				B2C601C621C6DFDB0028211B /* RockoUltraFLF.ttf in Resources */,
 				B2C6018221C59A2E0028211B /* LaunchScreen.storyboard in Resources */,
+				B2C601C421C6DFDB0028211B /* RockoUltraFLF-Bold.ttf in Resources */,
 				B2C6017F21C59A2E0028211B /* Assets.xcassets in Resources */,
-				B2C6017A21C59A290028211B /* Main.storyboard in Resources */,
+				B2C601C721C6DFDB0028211B /* RockoFLF-Bold.ttf in Resources */,
+				B2C601C521C6DFDB0028211B /* RockoFLF.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,22 +562,130 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0961F7DCDFDDAF73F67515E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ImageVoting-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		145E856AC8C3AA85F3CF886D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ImageVoting/Pods-ImageVoting-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/CodableFirebase/CodableFirebase.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableFirebase.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImageVoting/Pods-ImageVoting-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9CC6563366153A1D08DBA1F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ImageVotingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B2C6016D21C59A290028211B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B2C6019E21C59F050028211B /* NetworkManager.swift in Sources */,
+				B2C601D121C707DD0028211B /* LargeButton.swift in Sources */,
+				B2C601DB21C83A1D0028211B /* DeviceSize.swift in Sources */,
+				B2C601B121C6C3E50028211B /* UserEndpoint.swift in Sources */,
+				B22C853F21D3C74300476CE5 /* Queue.swift in Sources */,
+				B22C852F21D0B7D100476CE5 /* InputTextfield.swift in Sources */,
+				B22C852521D082B000476CE5 /* HTTPEndpoint.swift in Sources */,
+				B22C853821D2280100476CE5 /* ResultsTableViewCell.swift in Sources */,
+				B2C601CA21C6E5500028211B /* CircleView.swift in Sources */,
 				B2C601AB21C5A84E0028211B /* ColorStylable.swift in Sources */,
+				B2C601BE21C6DCD30028211B /* PostButton.swift in Sources */,
 				B2C6019C21C59EB20028211B /* ComparisonRecord.swift in Sources */,
 				B2C6017D21C59A290028211B /* ImageVoting.xcdatamodeld in Sources */,
+				B2C601B621C6C62F0028211B /* UserNetwork.swift in Sources */,
+				B2C601CC21C6E5E00028211B /* CircleImageView.swift in Sources */,
 				B2C601A021C59F460028211B /* GlobalNetwork.swift in Sources */,
+				B23D6B4621CC809400E562AD /* PublicVoteEndpoint.swift in Sources */,
 				B2C601A921C5A83E0028211B /* FontStylable.swift in Sources */,
-				B2C6017721C59A290028211B /* ViewController.swift in Sources */,
+				B2C601B421C6C6090028211B /* ThemeSelectable.swift in Sources */,
+				B22C853521D2274E00476CE5 /* ResultsTableViewController.swift in Sources */,
+				B22C854821D7BE2C00476CE5 /* ContactsTableViewController.swift in Sources */,
+				B2C6017721C59A290028211B /* HomeViewController.swift in Sources */,
+				B22C854121D3C9FF00476CE5 /* LinkedList.swift in Sources */,
+				B2C601BC21C6DC2C0028211B /* AnimatedButton.swift in Sources */,
+				B2C601D421C722EE0028211B /* ProfileViewController.swift in Sources */,
 				B2C601A721C5A7F90028211B /* Stylable.swift in Sources */,
+				B22C854A21D7BE7100476CE5 /* ContactsTableViewCell.swift in Sources */,
+				B23D6B4821CE162B00E562AD /* StorageEndpoint.swift in Sources */,
+				B2C601AE21C5BECA0028211B /* FirebaseEndpoint.swift in Sources */,
+				B23D6B4421CB529300E562AD /* ModalViewController.swift in Sources */,
 				B2C601A221C59FEB0028211B /* ImageVotable.swift in Sources */,
 				B2C601A421C5A05A0028211B /* ImagePostable.swift in Sources */,
+				B22C854621D7232500476CE5 /* ImageLoadable.swift in Sources */,
+				B22C853121D0BE3700476CE5 /* ButtonStylable.swift in Sources */,
+				B22C852021D07F1C00476CE5 /* HTTPRequestHandler.swift in Sources */,
 				B2C6019A21C59AEC0028211B /* UserData.swift in Sources */,
+				B2C601D721C734440028211B /* VoteAlertViewController.swift in Sources */,
+				B2C601CF21C6E7CA0028211B /* BasicLabel.swift in Sources */,
+				B22C852C21D0B6E300476CE5 /* LoginViewController.swift in Sources */,
+				B23D6B4121CB3E6300E562AD /* HomeViewControllerBuilder.swift in Sources */,
+				B22C852821D08B6400476CE5 /* PublicPostEndpoint.swift in Sources */,
+				B22C854421D67BC100476CE5 /* PostEndpoint.swift in Sources */,
 				B2C6017521C59A290028211B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,14 +709,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B2C6017821C59A290028211B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B2C6017921C59A290028211B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B2C6018021C59A2E0028211B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -422,6 +838,7 @@
 		};
 		B2C6019221C59A2E0028211B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C695A9151DEE0CF0F3A95BD /* Pods-ImageVoting.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -440,6 +857,7 @@
 		};
 		B2C6019321C59A2E0028211B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BDC47CEE580B453D47B04F5 /* Pods-ImageVoting.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -458,6 +876,7 @@
 		};
 		B2C6019521C59A2E0028211B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E29F16D219FA40A2DD81965 /* Pods-ImageVotingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -479,6 +898,7 @@
 		};
 		B2C6019621C59A2E0028211B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12B54B8EE8CFA4934DA12E2C /* Pods-ImageVotingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

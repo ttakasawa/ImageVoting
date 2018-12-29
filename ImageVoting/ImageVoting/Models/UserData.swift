@@ -8,20 +8,31 @@
 
 import Foundation
 
-class UserData {
+class UserData: Codable {
     
     var userId: String
     var firstName: String?
     var lastName: String?
     var email: String?
     var password: String?
+    var age: Int?
     
-    var comparisonRecords: [ComparisonRecord]?
+    var comparisonRecordKeys: [String]?
     var points: Int
     
     init (userId: String) {
         self.userId = userId
         self.points = 0
+        self.comparisonRecordKeys = []
+    }
+    
+    func setInitialValues(firstName: String, lastName: String, email: String? = nil, password: String? = nil) {
+        
+        self.firstName = firstName
+        self.lastName = lastName
+        self.email = email
+        self.password = password
+        
     }
     
     func setPoints(pts: Int) -> Bool {

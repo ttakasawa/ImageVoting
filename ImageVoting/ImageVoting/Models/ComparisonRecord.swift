@@ -7,52 +7,52 @@
 //
 
 import Foundation
+import UIKit
 //uesr -> comparison records
 //comparisons needs to be done ->
 
-class ComparisonRecord {
+class ComparisonRecord: Codable {
     
     var comparisonId: String?
     var datePosted: Date
-    var counter: Int
     var totalVoteNeeded: Int
     var voteType: VotingSelection
     
     var image1Url: String
     var image2Url: String
     
-    var image1Vote: Int
-    var image2Vote: Int
+    var image1VoteCount: Int
+    var image2VoteCount: Int
+    
+    var img1: UIImage?
+    var img2: UIImage?
+    
+    enum CodingKeys: String, CodingKey {
+        case comparisonId, datePosted, totalVoteNeeded, voteType, image1Url, image2Url, image1VoteCount, image2VoteCount
+    }
     
     var totalVotes: Int {
-        return self.image1Vote + self.image2Vote
+        return self.image1VoteCount + self.image2VoteCount
     }
     
     var image1Percentage: Int? {
-        return 100 * self.image1Vote / self.totalVotes
+        return 100 * self.image1VoteCount / self.totalVotes
     }
     var image2Percentage : Int? {
-        return 100 * self.image2Vote / self.totalVotes
+        return 100 * self.image2VoteCount / self.totalVotes
     }
     
     init (image1Url: String, image2Url: String, maxVotes: Int, voteType: VotingSelection){
         self.image1Url = image1Url
         self.image2Url = image2Url
-        self.image1Vote = 0
-        self.image2Vote = 0
+        self.image1VoteCount = 0
+        self.image2VoteCount = 0
+        //self.image2VoteCount = 0
         self.datePosted = Date()
         self.totalVoteNeeded = maxVotes
-        self.counter = 0
         self.voteType = voteType
     }
     
-    func updateVote(selected: ImageSelection) {
-        if selected == .image1 {
-            self.image1Vote += 1
-        }else{
-            self.image2Vote += 1
-        }
-    }
 }
 
 
@@ -61,7 +61,7 @@ enum ImageSelection {
     case image2
 }
 
-enum VotingSelection {
+enum VotingSelection: String, Codable {
     case privateSelection
     case publicSelection
 }

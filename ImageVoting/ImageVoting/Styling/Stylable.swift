@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Stylable: FontStylable, ColorStylable { }
+protocol Stylable: ColorStylable, FontStylable, ButtonStylable { }
 
 extension Stylable {
     

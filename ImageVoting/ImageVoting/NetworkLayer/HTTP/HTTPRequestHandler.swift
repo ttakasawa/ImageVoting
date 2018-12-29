@@ -30,12 +30,14 @@ extension HTTPRequestHandler {
         Alamofire.request(url, method: httpMethod, parameters: endpoint.body as? [String : String] ?? nil)
             .validate(statusCode: 200..<300).responseString(){ response in
                 print("in httpRequest")
-                print(response.error)
+                
                 switch response.result {
-                case .success:
                     
+                case .success:
                     completion(true, response.error)
+                    
                 case .failure:
+                    print(response.error ?? "Just error, ok?")
                     completion(false, response.error)
 
             }

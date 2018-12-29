@@ -131,9 +131,11 @@ class ProfileViewController: UITableViewController, Stylable {
         case 0:
             switch indexPath.row {
             case 0:
-                print("hi")
+                if let navigator = self.navigationController {
+                    navigator.pushViewController(UserBasicInfoViewController(theme: self.theme, network: self.network), animated: true)
+                }
             case 1:
-                print("dfv")
+                SCLAlertView().showNotice("Coming soon", subTitle: "We are working on this feature. It's coming shortly")
             case 2:
                 if let navigator = self.navigationController {
                     navigator.pushViewController(ResultsTableViewController(network: self.network), animated: true)

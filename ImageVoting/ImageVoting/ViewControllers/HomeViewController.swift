@@ -728,7 +728,7 @@ extension HomeViewController: CNContactPickerDelegate {
             print(contact.givenName)
             print(contact.phoneNumbers)
             
-            guard let friendsPhoneNumber = contact.phoneNumbers.first?.value.stringValue else { return }
+            //guard let friendsPhoneNumber = contact.phoneNumbers.first?.value.stringValue else { return }
             
 //            if (MFMessageComposeViewController.canSendText()) {
 //                let controller = MFMessageComposeViewController()

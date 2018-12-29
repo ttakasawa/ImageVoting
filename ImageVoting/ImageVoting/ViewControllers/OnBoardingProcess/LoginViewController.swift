@@ -78,7 +78,6 @@ class LoginViewController: UIViewController, Stylable {
     
     func constrain(){
         
-        let screenHeight = ScreenSize.SCREEN_HEIGHT
         let diameter = self.view.bounds.height * 1.5
         
         

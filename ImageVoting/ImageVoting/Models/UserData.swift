@@ -16,6 +16,7 @@ class UserData: Codable {
     var email: String?
     var password: String?
     var age: Int?
+    var gender: Gender?
     
     var comparisonRecordKeys: [String]?
     var points: Int
@@ -49,3 +50,22 @@ class UserData: Codable {
     }
 }
 
+enum Gender: String, Codable {
+    case male
+    case female
+    case other
+    case noAnswer
+    
+    var displayAs: String {
+        switch  self {
+        case .male:
+            return "Men"
+        case .female:
+            return "Women"
+        case .other:
+            return "Others"
+        case .noAnswer:
+            return "Prefer not to answer"
+        }
+    }
+}

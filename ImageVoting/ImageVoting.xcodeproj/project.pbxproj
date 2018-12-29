@@ -22,8 +22,10 @@
 		B22C854121D3C9FF00476CE5 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C854021D3C9FF00476CE5 /* LinkedList.swift */; };
 		B22C854421D67BC100476CE5 /* PostEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C854321D67BC100476CE5 /* PostEndpoint.swift */; };
 		B22C854621D7232500476CE5 /* ImageLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C854521D7232500476CE5 /* ImageLoadable.swift */; };
-		B22C854821D7BE2C00476CE5 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C854721D7BE2C00476CE5 /* ContactsTableViewController.swift */; };
 		B22C854A21D7BE7100476CE5 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C854921D7BE7100476CE5 /* ContactsTableViewCell.swift */; };
+		B22C854C21D7DD2300476CE5 /* UserBasicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C854B21D7DD2300476CE5 /* UserBasicInfoViewController.swift */; };
+		B22C854E21D7DD9200476CE5 /* UserBasicInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C854D21D7DD9200476CE5 /* UserBasicInfoView.swift */; };
+		B22C855021D7E9C300476CE5 /* UserInfoInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C854F21D7E9C300476CE5 /* UserInfoInputViewController.swift */; };
 		B23D6B4121CB3E6300E562AD /* HomeViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D6B4021CB3E6300E562AD /* HomeViewControllerBuilder.swift */; };
 		B23D6B4421CB529300E562AD /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D6B4321CB529300E562AD /* ModalViewController.swift */; };
 		B23D6B4621CC809400E562AD /* PublicVoteEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D6B4521CC809400E562AD /* PublicVoteEndpoint.swift */; };
@@ -93,8 +95,10 @@
 		B22C854021D3C9FF00476CE5 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		B22C854321D67BC100476CE5 /* PostEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEndpoint.swift; sourceTree = "<group>"; };
 		B22C854521D7232500476CE5 /* ImageLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadable.swift; sourceTree = "<group>"; };
-		B22C854721D7BE2C00476CE5 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		B22C854921D7BE7100476CE5 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
+		B22C854B21D7DD2300476CE5 /* UserBasicInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBasicInfoViewController.swift; sourceTree = "<group>"; };
+		B22C854D21D7DD9200476CE5 /* UserBasicInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBasicInfoView.swift; sourceTree = "<group>"; };
+		B22C854F21D7E9C300476CE5 /* UserInfoInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoInputViewController.swift; sourceTree = "<group>"; };
 		B23D6B4021CB3E6300E562AD /* HomeViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerBuilder.swift; sourceTree = "<group>"; };
 		B23D6B4321CB529300E562AD /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		B23D6B4521CC809400E562AD /* PublicVoteEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicVoteEndpoint.swift; sourceTree = "<group>"; };
@@ -416,6 +420,7 @@
 			children = (
 				B2C601C921C6E5500028211B /* CircleView.swift */,
 				B2C601CB21C6E5E00028211B /* CircleImageView.swift */,
+				B22C854D21D7DD9200476CE5 /* UserBasicInfoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -436,7 +441,8 @@
 				B2C6017621C59A290028211B /* HomeViewController.swift */,
 				B2C601D321C722EE0028211B /* ProfileViewController.swift */,
 				B22C853421D2274E00476CE5 /* ResultsTableViewController.swift */,
-				B22C854721D7BE2C00476CE5 /* ContactsTableViewController.swift */,
+				B22C854B21D7DD2300476CE5 /* UserBasicInfoViewController.swift */,
+				B22C854F21D7E9C300476CE5 /* UserInfoInputViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -597,8 +603,10 @@
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
+				"${BUILT_PRODUCTS_DIR}/fluid-slider/fluid_slider.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -611,8 +619,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/fluid_slider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -664,9 +674,11 @@
 				B2C601A921C5A83E0028211B /* FontStylable.swift in Sources */,
 				B2C601B421C6C6090028211B /* ThemeSelectable.swift in Sources */,
 				B22C853521D2274E00476CE5 /* ResultsTableViewController.swift in Sources */,
-				B22C854821D7BE2C00476CE5 /* ContactsTableViewController.swift in Sources */,
 				B2C6017721C59A290028211B /* HomeViewController.swift in Sources */,
 				B22C854121D3C9FF00476CE5 /* LinkedList.swift in Sources */,
+				B22C855021D7E9C300476CE5 /* UserInfoInputViewController.swift in Sources */,
+				B22C854E21D7DD9200476CE5 /* UserBasicInfoView.swift in Sources */,
+				B22C854C21D7DD2300476CE5 /* UserBasicInfoViewController.swift in Sources */,
 				B2C601BC21C6DC2C0028211B /* AnimatedButton.swift in Sources */,
 				B2C601D421C722EE0028211B /* ProfileViewController.swift in Sources */,
 				B2C601A721C5A7F90028211B /* Stylable.swift in Sources */,
@@ -844,10 +856,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ES7WL3NG8;
 				INFOPLIST_FILE = ImageVoting/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ttakasawa.ImageVoting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -863,10 +872,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ES7WL3NG8;
 				INFOPLIST_FILE = ImageVoting/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ttakasawa.ImageVoting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -883,11 +889,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ES7WL3NG8;
 				INFOPLIST_FILE = ImageVotingTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ttakasawa.ImageVotingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -905,11 +907,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ES7WL3NG8;
 				INFOPLIST_FILE = ImageVotingTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ttakasawa.ImageVotingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

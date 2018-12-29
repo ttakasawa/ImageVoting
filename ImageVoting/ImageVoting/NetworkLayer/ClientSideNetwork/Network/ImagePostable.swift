@@ -41,7 +41,7 @@ extension ImagePostable where Self: NetworkManager {
         self.uploadImageToStorage(endpoint: firstEndpoint) { (stringUrl1, error) in
             
             if error != nil {
-                print(error)
+                print(error ?? "Error uploading the first image")
             }
             
             guard let stringUrl1 = stringUrl1 else {

@@ -19,6 +19,7 @@ target 'ImageVoting' do
     pod 'SCLAlertView'
     pod 'TransitionButton'
     pod 'NVActivityIndicatorView'
+    pod 'fluid-slider'
 
   target 'ImageVotingTests' do
     inherit! :search_paths

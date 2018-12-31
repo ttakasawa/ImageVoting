@@ -13,7 +13,7 @@ class UserBasicInfoViewController: UIViewController, Stylable {
     var network: GlobalNetwork
     var theme: ColorTheme
     
-    var userView: UserBasicInfoView!
+    var userView: UserBasicInfoView?
     var editButton: LargeButton!
     
     init(theme: ColorTheme, network: GlobalNetwork) {
@@ -32,8 +32,9 @@ class UserBasicInfoViewController: UIViewController, Stylable {
         
         self.view.backgroundColor = self.getSecondaryBackgroundColor()
 
-        guard let user = self.network.user else { return}
+        guard let user = self.network.user else { return }
         userView = UserBasicInfoView(theme: self.theme, userDisplayable: user)
+        guard let userView = self.userView else { return }
         
         editButton = LargeButton(title: "Edit Profile", theme: self.theme)
         editButton.backgroundColor = self.getMainAccentColor()
@@ -58,10 +59,16 @@ class UserBasicInfoViewController: UIViewController, Stylable {
         super.viewWillAppear(animated)
         
         self.navigationItem.title = "Your Profile"
+        
+        guard let userView = self.userView else { return }
+        guard let user = self.network.user else { return }
+        userView.setValue(user: user)
+        
     }
     
     @objc func editPressed() {
-        print("should edit")
+        guard let user = self.network.user else { return }
+        self.present(UserInfoInputViewController(theme: self.theme, network: self.network, user: user), animated: true, completion: nil)
     }
     
 

@@ -26,12 +26,13 @@ class HomeViewController: UIViewController, ModalController, Stylable {
     
     var circleBackground: UIView!
     
+    var scoreLabel: UILabel!
     var closeButton: UIButton!
     var profileButton: UIButton!
     var messageLabel: UILabel!
     var image1View: CircleImageView!
     var image2View: CircleImageView!
-    var heartView: UIImageView!
+    var heartView: UIImageView?
     var vsCircleView: CircleView!
     var image1PercentageLabel: UILabel!
     var image2PercentageLabel: UILabel!
@@ -64,6 +65,17 @@ class HomeViewController: UIViewController, ModalController, Stylable {
             case .consecutiveWin:
                 let strings = ["Great! You're right again! 2 pts", "Wow! Amazing! 2 pts", "Holy sh*t! You're on fire! 2 pts", "Awesome again! 2 pts"]
                 return strings[randNum]
+            }
+        }
+        
+        var pointsEarned: Int {
+            switch self {
+            case .win:
+                return 1
+            case .lose, .consecutiveLose:
+                return 0
+            case .consecutiveWin:
+                return 2
             }
         }
         
@@ -129,6 +141,8 @@ class HomeViewController: UIViewController, ModalController, Stylable {
             image2PercentageLabel.text = "( 52 % )"
             commentaryMessageLabel.text = "Very close! 0 pts"
             postMessageLabel.text = "Post yours to find your best image"
+            scoreLabel.text = "0 pts"
+            
             
         }else{
             messageLabel.text = "Post Your Own"
@@ -186,6 +200,13 @@ class HomeViewController: UIViewController, ModalController, Stylable {
         circleBackground.translatesAutoresizingMaskIntoConstraints = false
         circleBackground.backgroundColor = self.getSecondaryBackgroundColor()
         circleBackground.layer.cornerRadius = radiusOfLargeCircle
+        
+        scoreLabel = UILabel()
+        scoreLabel.font = self.getNormalFont()
+        scoreLabel.textColor = self.getTextColor()
+        scoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        scoreLabel.adjustsFontSizeToFitWidth = true
+        scoreLabel.textAlignment = .center
         
         messageLabel = UILabel()
         messageLabel.font = self.builder == .vote ? self.getNormalFont() : self.getTitleFont()
@@ -288,6 +309,7 @@ class HomeViewController: UIViewController, ModalController, Stylable {
             self.view.addSubview(image1PercentageLabel)
             self.view.addSubview(image2PercentageLabel)
             self.view.addSubview(resultsButton)
+            self.view.addSubview(scoreLabel)
         }else{
             self.view.addSubview(uploadInstructionLabel)
             self.configureCloseButton(selector: #selector(self.closeView))
@@ -307,6 +329,9 @@ class HomeViewController: UIViewController, ModalController, Stylable {
             profileButton.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -10).isActive = true
             profileButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
             profileButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+            
+            scoreLabel.centerYAnchor.constraint(equalTo: profileButton.centerYAnchor).isActive = true
+            scoreLabel.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 20).isActive = true
             
             image1View.bottomAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -40).isActive = true
             image1View.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive = true
@@ -416,6 +441,8 @@ class HomeViewController: UIViewController, ModalController, Stylable {
                 guard let user = user else { return }
                 
                 self.network.user = user
+                self.scoreLabel.text = String(user.points) + " pts"
+                
                 self.network.getPublicComparison(userId: user.userId, completion: { (postsToBeVoted) in
                     
                     self.queue.enqueue(postsToBeVoted)
@@ -426,7 +453,10 @@ class HomeViewController: UIViewController, ModalController, Stylable {
         
     }
     
-    
+    func updateUserPoints(user: UserData, points: Int) {
+        user.points = user.points + points
+        self.scoreLabel.text = String(user.points) + " pts"
+    }
     
     func showPostFailed(){
         // ask user to re-do the post and apologize
@@ -476,9 +506,11 @@ extension HomeViewController {
         
         self.image1View.layer.borderColor = self.getTextColor().cgColor
         self.image2View.layer.borderColor = self.getTextColor().cgColor
+        
+        heartView?.removeFromSuperview()
     }
     
-    func showAnswer() -> UIImageView{
+    func showAnswer() -> UIImageView {
         
         var longerImageView: UIImageView!
         
@@ -507,7 +539,7 @@ extension HomeViewController {
     }
     
     
-    func changeText(correctness: Bool){
+    func evaluateAnswer(correctness: Bool) -> Int {
         
         var currentStatus: GameStatus!
         
@@ -516,7 +548,7 @@ extension HomeViewController {
                 currentStatus = .consecutiveWin
             }else if pastGameStatus == .lose && correctness == false {
                 currentStatus = .consecutiveLose
-            }else if pastGameStatus == .win && correctness == false {
+            }else if (pastGameStatus == .win || pastGameStatus == .consecutiveWin) && correctness == false {
                 currentStatus = .lose
             }else{
                 currentStatus = .win
@@ -531,6 +563,8 @@ extension HomeViewController {
         
         self.commentaryMessageLabel.text = currentStatus.commentary
         pastGameStatus = currentStatus
+        
+        return currentStatus.pointsEarned
     }
     
     func getPercentageFormat(percent: Int?) -> String {
@@ -576,6 +610,7 @@ extension HomeViewController {
     func placeHeartViewOnImageView(imgView: UIImageView) {
         
         heartView = UIImageView()
+        guard let heartView = heartView else { return }
         heartView.image = UIImage()
         heartView.backgroundColor = .white
         heartView.translatesAutoresizingMaskIntoConstraints = false
@@ -589,10 +624,13 @@ extension HomeViewController {
     
     func voteExecute(imgView: UIImageView){
         
+        guard let user = self.network.user else { return }
+        
         self.switchInteractionOfImageViews(enabled: false)
         self.placeHeartViewOnImageView(imgView: imgView)
         let correctAns = self.showAnswer()
-        self.changeText(correctness: correctAns == imgView ? true : false)
+        let points = self.evaluateAnswer(correctness: correctAns == imgView ? true : false)
+        self.updateUserPoints(user: user, points: points)
         
         self.submitVote { (success) in
             self.hideAnswer()
@@ -820,3 +858,4 @@ extension Stylable where Self: HomeViewController {
         return UIFont(name: "RockoFLF-Bold", size: 45)!
     }
 }
+

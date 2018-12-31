@@ -18,12 +18,6 @@ enum SettingsType {
 }
 
 
-enum editableDogInfo {
-    case name
-    case age
-    case breed
-}
-
 struct Setting {
     static let sectionTitleArray = ["About YOU", "About US", "Other"]
     static let titleArray = [

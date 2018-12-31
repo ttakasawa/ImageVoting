@@ -26,11 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         FirebaseApp.configure()
+        self.setDiskPersistence()
         
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         window?.makeKeyAndVisible()
-        
         
         self.startApp()
         
@@ -40,6 +40,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        
+        if let user = Global.network.user {
+            Global.network.updateUser(user: user) { (error) in
+                
+            }
+        }
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -104,6 +110,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    func setDiskPersistence(){
+        
+        Database.database().isPersistenceEnabled = true
+        let postRef = Database.database().reference(withPath: "Post")
+        let postCreatorRef = Database.database().reference(withPath: "Post-CreatorTable")
+        let userVotablePostsRef = Database.database().reference(withPath: "User-VotablePublicPostTable/{userId}")
+        
+        postRef.keepSynced(true)
+        postCreatorRef.keepSynced(true)
+        userVotablePostsRef.keepSynced(true)
+        
     }
 
 }

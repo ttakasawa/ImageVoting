@@ -26,6 +26,7 @@
 		B22C854C21D7DD2300476CE5 /* UserBasicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C854B21D7DD2300476CE5 /* UserBasicInfoViewController.swift */; };
 		B22C854E21D7DD9200476CE5 /* UserBasicInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C854D21D7DD9200476CE5 /* UserBasicInfoView.swift */; };
 		B22C855021D7E9C300476CE5 /* UserInfoInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C854F21D7E9C300476CE5 /* UserInfoInputViewController.swift */; };
+		B22C855321DA154300476CE5 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C855221DA154300476CE5 /* UIImageExtensions.swift */; };
 		B23D6B4121CB3E6300E562AD /* HomeViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D6B4021CB3E6300E562AD /* HomeViewControllerBuilder.swift */; };
 		B23D6B4421CB529300E562AD /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D6B4321CB529300E562AD /* ModalViewController.swift */; };
 		B23D6B4621CC809400E562AD /* PublicVoteEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D6B4521CC809400E562AD /* PublicVoteEndpoint.swift */; };
@@ -99,6 +100,7 @@
 		B22C854B21D7DD2300476CE5 /* UserBasicInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBasicInfoViewController.swift; sourceTree = "<group>"; };
 		B22C854D21D7DD9200476CE5 /* UserBasicInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBasicInfoView.swift; sourceTree = "<group>"; };
 		B22C854F21D7E9C300476CE5 /* UserInfoInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoInputViewController.swift; sourceTree = "<group>"; };
+		B22C855221DA154300476CE5 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		B23D6B4021CB3E6300E562AD /* HomeViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerBuilder.swift; sourceTree = "<group>"; };
 		B23D6B4321CB529300E562AD /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		B23D6B4521CC809400E562AD /* PublicVoteEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicVoteEndpoint.swift; sourceTree = "<group>"; };
@@ -249,6 +251,14 @@
 			path = Scheme;
 			sourceTree = "<group>";
 		};
+		B22C855121DA152300476CE5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B22C855221DA154300476CE5 /* UIImageExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B23D6B3F21CB3E4300E562AD /* Builder */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +298,7 @@
 		B2C6017321C59A290028211B /* ImageVoting */ = {
 			isa = PBXGroup;
 			children = (
+				B22C855121DA152300476CE5 /* Extensions */,
 				B2C601D221C7227E0028211B /* ViewControllers */,
 				B2C601BF21C6DFC30028211B /* Fonts */,
 				B2C601B921C6DBFE0028211B /* UIComopenets */,
@@ -661,6 +672,7 @@
 				B22C853F21D3C74300476CE5 /* Queue.swift in Sources */,
 				B22C852F21D0B7D100476CE5 /* InputTextfield.swift in Sources */,
 				B22C852521D082B000476CE5 /* HTTPEndpoint.swift in Sources */,
+				B22C855321DA154300476CE5 /* UIImageExtensions.swift in Sources */,
 				B22C853821D2280100476CE5 /* ResultsTableViewCell.swift in Sources */,
 				B2C601CA21C6E5500028211B /* CircleView.swift in Sources */,
 				B2C601AB21C5A84E0028211B /* ColorStylable.swift in Sources */,
@@ -856,7 +868,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ES7WL3NG8;
 				INFOPLIST_FILE = ImageVoting/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ttakasawa.ImageVoting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -872,7 +887,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ES7WL3NG8;
 				INFOPLIST_FILE = ImageVoting/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ttakasawa.ImageVoting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -889,7 +907,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ES7WL3NG8;
 				INFOPLIST_FILE = ImageVotingTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ttakasawa.ImageVotingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -907,7 +929,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ES7WL3NG8;
 				INFOPLIST_FILE = ImageVotingTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ttakasawa.ImageVotingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

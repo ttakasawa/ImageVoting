@@ -11,7 +11,6 @@ import UIKit
 class UserBasicInfoView: UIView, Stylable {
     
     var theme: ColorTheme
-    var userDisplayable: UserDisplayable
     
     var profileImageView = UIImageView()
     var viewForLabels = UIView()
@@ -20,12 +19,11 @@ class UserBasicInfoView: UIView, Stylable {
 
     init(theme: ColorTheme, userDisplayable: UserDisplayable){
         self.theme = theme
-        self.userDisplayable = userDisplayable
         
         super.init(frame: CGRect.zero)
         
         self.layoutView()
-        self.setValue()
+        self.setValue(user: userDisplayable)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -64,7 +62,7 @@ class UserBasicInfoView: UIView, Stylable {
         ageGenderLabel.textColor = self.getTextColor()
         ageGenderLabel.textAlignment = .center
         ageGenderLabel.adjustsFontSizeToFitWidth = true
-        ageGenderLabel.numberOfLines = 1
+        ageGenderLabel.numberOfLines = 2
         
         
         self.addSubview(profileImageView)
@@ -96,13 +94,11 @@ class UserBasicInfoView: UIView, Stylable {
         self.bottomAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 10).isActive = true
     }
     
-    func setValue(){
+    func setValue(user: UserDisplayable){
         
         var nameString: String!
         var ageGenderString: String!
         var profileDefaultImage = UIImage()
-        
-        let user = self.userDisplayable
         
         if (user.firstName != nil) {
             if (user.lastName != nil) {
@@ -116,7 +112,7 @@ class UserBasicInfoView: UIView, Stylable {
         
         if user.age != nil {
             if user.gender != nil {
-                ageGenderString = "age: \(user.age!) * gender: \(user.gender!.displayAs)"
+                ageGenderString = "age: \(user.age!) \n gender: \(user.gender!.displayAs)"
             }else{
                 ageGenderString = "age: \(user.age!)"
             }

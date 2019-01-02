@@ -17,6 +17,7 @@ protocol ImagePostable {
 
 extension ImagePostable where Self: HTTPRequestHandler {
     func uploadImages(userId: String, comparison: ComparisonRecord, completion: @escaping (_ suceess: Bool, _ error: Error?) -> Void) {
+        
         self.httpRequest(endpoint: PublicPostEndpoint.postComparison(userId: userId, comparison: comparison)) { (_ success: Bool, _ error: Error?) in
             
             completion(success, error)

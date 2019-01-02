@@ -16,7 +16,7 @@ enum PublicPostEndpoint: FirebaseEndpoint {
     var path: String? {
         switch self{
         case .postComparison(_, _):
-            return "Post"
+            return "publicPost"
         }
     }
     
@@ -25,10 +25,11 @@ enum PublicPostEndpoint: FirebaseEndpoint {
         case .postComparison(let userId, let comparison):
             return [
                 "userId" : userId,
-                "timestamp" : comparison.datePosted,
+                "timestamp" : comparison.timestamp.timeIntervalSince1970,
                 "image1Url" : comparison.image1Url,
                 "image2Url" : comparison.image2Url,
-                "totalVotesNeeded" : comparison.totalVoteNeeded
+                "totalVotesNeeded" : comparison.totalVotesNeeded,
+                "voteType" : comparison.voteType
             ]
         }
     }

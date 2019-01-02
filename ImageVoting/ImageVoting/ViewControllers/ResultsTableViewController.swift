@@ -60,23 +60,38 @@ class ResultsTableViewController: UITableViewController, Stylable {
     
     func configure(){
         
-        let result = ComparisonRecord(image1Url: "https://firebasestorage.googleapis.com/v0/b/imagevoting-e0ac5.appspot.com/o/PublicImagePost%2Fsn1ER4dPDjRr9rvtl0BzVuVgiZi1%2F685B02BF-EE3B-46A5-8307-1EC201776900?alt=media&token=54d384a6-1c02-4db9-a292-4b93a65ba642", image2Url: "https://firebasestorage.googleapis.com/v0/b/imagevoting-e0ac5.appspot.com/o/PublicImagePost%2Fsn1ER4dPDjRr9rvtl0BzVuVgiZi1%2FA4140FBB-B094-4BC0-8516-C82AD95044B6?alt=media&token=a9a8035e-381b-47f1-a8b5-279f9e5cf810", maxVotes: 10, voteType: .publicSelection)
+        guard let user = self.network.user else { return }
+        self.network.queryPastResults(user: user) { (records) in
+            self.comparisonData = records
+            self.reloadTableView()
+        }
         
-        result.image1VoteCount = 4
-        result.image2VoteCount = 6
+//        let result = ComparisonRecord(image1Url: "https://firebasestorage.googleapis.com/v0/b/imagevoting-e0ac5.appspot.com/o/PublicImagePost%2Fsn1ER4dPDjRr9rvtl0BzVuVgiZi1%2F685B02BF-EE3B-46A5-8307-1EC201776900?alt=media&token=54d384a6-1c02-4db9-a292-4b93a65ba642", image2Url: "https://firebasestorage.googleapis.com/v0/b/imagevoting-e0ac5.appspot.com/o/PublicImagePost%2Fsn1ER4dPDjRr9rvtl0BzVuVgiZi1%2FA4140FBB-B094-4BC0-8516-C82AD95044B6?alt=media&token=a9a8035e-381b-47f1-a8b5-279f9e5cf810", maxVotes: 10, voteType: .publicSelection)
+//
+//        result.image1VoteCount = 4
+//        result.image2VoteCount = 6
+//
+//        comparisonData.append(result)
+//        comparisonData.append(result)
+//
+//        if comparisonData.count == 0 {
+//            self.placePostButton()
+//        }else{
+//            self.removePostButton()
+//            self.tableView.reloadData()
+//        }
         
-        comparisonData.append(result)
-        comparisonData.append(result)
-        
+    }
+
+    
+    func reloadTableView() {
         if comparisonData.count == 0 {
             self.placePostButton()
         }else{
             self.removePostButton()
             self.tableView.reloadData()
         }
-        
     }
-
     // MARK: - Table view data source
 
     

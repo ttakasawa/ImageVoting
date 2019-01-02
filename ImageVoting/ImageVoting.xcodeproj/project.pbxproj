@@ -27,6 +27,8 @@
 		B22C854E21D7DD9200476CE5 /* UserBasicInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C854D21D7DD9200476CE5 /* UserBasicInfoView.swift */; };
 		B22C855021D7E9C300476CE5 /* UserInfoInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C854F21D7E9C300476CE5 /* UserInfoInputViewController.swift */; };
 		B22C855321DA154300476CE5 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C855221DA154300476CE5 /* UIImageExtensions.swift */; };
+		B22C855621DD2C4900476CE5 /* VoteActionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C855521DD2C4900476CE5 /* VoteActionExtension.swift */; };
+		B22C855821DD2CB200476CE5 /* PostActionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C855721DD2CB200476CE5 /* PostActionExtension.swift */; };
 		B23D6B4121CB3E6300E562AD /* HomeViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D6B4021CB3E6300E562AD /* HomeViewControllerBuilder.swift */; };
 		B23D6B4421CB529300E562AD /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D6B4321CB529300E562AD /* ModalViewController.swift */; };
 		B23D6B4621CC809400E562AD /* PublicVoteEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D6B4521CC809400E562AD /* PublicVoteEndpoint.swift */; };
@@ -101,6 +103,8 @@
 		B22C854D21D7DD9200476CE5 /* UserBasicInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBasicInfoView.swift; sourceTree = "<group>"; };
 		B22C854F21D7E9C300476CE5 /* UserInfoInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoInputViewController.swift; sourceTree = "<group>"; };
 		B22C855221DA154300476CE5 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		B22C855521DD2C4900476CE5 /* VoteActionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteActionExtension.swift; sourceTree = "<group>"; };
+		B22C855721DD2CB200476CE5 /* PostActionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostActionExtension.swift; sourceTree = "<group>"; };
 		B23D6B4021CB3E6300E562AD /* HomeViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerBuilder.swift; sourceTree = "<group>"; };
 		B23D6B4321CB529300E562AD /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		B23D6B4521CC809400E562AD /* PublicVoteEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicVoteEndpoint.swift; sourceTree = "<group>"; };
@@ -257,6 +261,16 @@
 				B22C855221DA154300476CE5 /* UIImageExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B22C855421DD2BFF00476CE5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B2C6017621C59A290028211B /* HomeViewController.swift */,
+				B22C855521DD2C4900476CE5 /* VoteActionExtension.swift */,
+				B22C855721DD2CB200476CE5 /* PostActionExtension.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		B23D6B3F21CB3E4300E562AD /* Builder */ = {
@@ -447,9 +461,9 @@
 		B2C601D221C7227E0028211B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B22C855421DD2BFF00476CE5 /* Home */,
 				B22C852A21D0B6C700476CE5 /* OnBoardingProcess */,
 				B2C601D521C734210028211B /* AlertViewControllers */,
-				B2C6017621C59A290028211B /* HomeViewController.swift */,
 				B2C601D321C722EE0028211B /* ProfileViewController.swift */,
 				B22C853421D2274E00476CE5 /* ResultsTableViewController.swift */,
 				B22C854B21D7DD2300476CE5 /* UserBasicInfoViewController.swift */,
@@ -686,6 +700,7 @@
 				B2C601A921C5A83E0028211B /* FontStylable.swift in Sources */,
 				B2C601B421C6C6090028211B /* ThemeSelectable.swift in Sources */,
 				B22C853521D2274E00476CE5 /* ResultsTableViewController.swift in Sources */,
+				B22C855821DD2CB200476CE5 /* PostActionExtension.swift in Sources */,
 				B2C6017721C59A290028211B /* HomeViewController.swift in Sources */,
 				B22C854121D3C9FF00476CE5 /* LinkedList.swift in Sources */,
 				B22C855021D7E9C300476CE5 /* UserInfoInputViewController.swift in Sources */,
@@ -695,6 +710,7 @@
 				B2C601D421C722EE0028211B /* ProfileViewController.swift in Sources */,
 				B2C601A721C5A7F90028211B /* Stylable.swift in Sources */,
 				B22C854A21D7BE7100476CE5 /* ContactsTableViewCell.swift in Sources */,
+				B22C855621DD2C4900476CE5 /* VoteActionExtension.swift in Sources */,
 				B23D6B4821CE162B00E562AD /* StorageEndpoint.swift in Sources */,
 				B2C601AE21C5BECA0028211B /* FirebaseEndpoint.swift in Sources */,
 				B23D6B4421CB529300E562AD /* ModalViewController.swift in Sources */,

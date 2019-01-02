@@ -17,6 +17,7 @@ class UserData: Codable {
     var password: String?
     var age: Int?
     var gender: Gender?
+    var records: [String : Bool]?
     
     var comparisonRecordKeys: [String]?
     var points: Int

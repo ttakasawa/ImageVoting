@@ -115,11 +115,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setDiskPersistence(){
         
         Database.database().isPersistenceEnabled = true
+        
         let postRef = Database.database().reference(withPath: "Post")
+        let userPostRef = Database.database().reference(withPath: "User/{userId}/records")
         let postCreatorRef = Database.database().reference(withPath: "Post-CreatorTable")
         let userVotablePostsRef = Database.database().reference(withPath: "User-VotablePublicPostTable/{userId}")
         
         postRef.keepSynced(true)
+        userPostRef.keepSynced(true)
         postCreatorRef.keepSynced(true)
         userVotablePostsRef.keepSynced(true)
         

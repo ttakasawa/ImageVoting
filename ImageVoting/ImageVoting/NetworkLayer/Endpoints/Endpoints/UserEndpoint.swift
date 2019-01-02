@@ -29,7 +29,9 @@ enum UserEndpoint: FirebaseEndpoint {
             return nil
         case .queryUser(let userId), .updateUser(let userId, _):
             return "User/\(userId)"
-        case .getAllResultKeys(let userId), .getLatestResult(let userId):
+        case .getAllResultKeys(let userId):
+            return "User/\(userId)/records"
+        case .getLatestResult(let userId):
             return "Post-CreatorTable/\(userId)"
         case .getAllResults(let postId):
             return "Post/\(postId)"

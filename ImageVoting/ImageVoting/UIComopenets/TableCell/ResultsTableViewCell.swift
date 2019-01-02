@@ -135,26 +135,28 @@ class ResultsTableViewCell: UITableViewCell, Stylable {
         if let record = self.result {
             
             let cal = Calendar.current
-            let year = cal.component(.year, from: record.datePosted)
-            let month = cal.component(.month, from: record.datePosted)
-            let day = cal.component(.day, from: record.datePosted)
+            let year = cal.component(.year, from: record.timestamp)
+            let month = cal.component(.month, from: record.timestamp)
+            let day = cal.component(.day, from: record.timestamp)
             let dateString = String(describing: year) + "/" + String(describing: month) + "/" + String(describing: day)
             
             self.datePostedLabel.text = "posted: " + dateString
-            self.statusLabel.text = record.totalVotes >= record.totalVoteNeeded ? "Status: Completed" : "Status: In process"
+            self.statusLabel.text = record.totalVotes >= record.totalVotesNeeded ? "Status: Completed" : "Status: In process"
             
             
             let image1Percent = record.image1Percentage ?? 50
             let image2Percent = 100 - image1Percent
             
-            self.image1PercentageLabel.text = record.totalVotes >= record.totalVoteNeeded ? String(image1Percent) + " %" : "?? %"
-            self.image2PercentageLabel.text = record.totalVotes >= record.totalVoteNeeded ? String(image2Percent) + " %" : "?? %"
+            self.image1PercentageLabel.text = record.totalVotes >= record.totalVotesNeeded ? String(image1Percent) + " %" : "?? %"
+            self.image2PercentageLabel.text = record.totalVotes >= record.totalVotesNeeded ? String(image2Percent) + " %" : "?? %"
             
             
-            if record.totalVotes >= record.totalVoteNeeded && record.image1VoteCount >= record.image2VoteCount {
-                self.image1View.layer.borderColor = self.getThirdAccentColor().cgColor
-            }else{
-                self.image2View.layer.borderColor = self.getThirdAccentColor().cgColor
+            if record.totalVotes >= record.totalVotesNeeded {
+                if record.image1VoteCount >= record.image2VoteCount {
+                    self.image1View.layer.borderColor = self.getThirdAccentColor().cgColor
+                }else{
+                    self.image2View.layer.borderColor = self.getThirdAccentColor().cgColor
+                }
             }
             
         }

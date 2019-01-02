@@ -21,13 +21,14 @@ extension HTTPRequestHandler {
         guard let path = endpoint.path else { return }
         let url = self.baseURL.appendingPathComponent(path)
         
-        if (endpoint.body as? [String : String]) != nil {
+        if endpoint.body != nil {
             httpMethod = HTTPMethod.post
         }else{
             httpMethod = HTTPMethod.get
         }
         
-        Alamofire.request(url, method: httpMethod, parameters: endpoint.body as? [String : String] ?? nil)
+        
+        Alamofire.request(url, method: httpMethod, parameters: endpoint.body as? [String : Any] ?? nil)
             .validate(statusCode: 200..<300).responseString(){ response in
                 print("in httpRequest")
                 
@@ -37,7 +38,6 @@ extension HTTPRequestHandler {
                     completion(true, response.error)
                     
                 case .failure:
-                    print(response.error ?? "Just error, ok?")
                     completion(false, response.error)
 
             }

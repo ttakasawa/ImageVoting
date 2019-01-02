@@ -120,6 +120,7 @@ extension UserNetwork where Self: NetworkManager {
         self.fetchFirebase(endpoint: UserEndpoint.getAllResultKeys(userId: user.userId)) { (_ key: String?, _ error: Error?) in
             
             if key != nil {
+                
                 self.fetchFirebase(endpoint: PostEndpoint.getPosts(postId: key!), completion: { (result: ComparisonRecord?, error: Error?) in
                     if error != nil {
                         return

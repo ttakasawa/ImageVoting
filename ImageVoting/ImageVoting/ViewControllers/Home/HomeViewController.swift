@@ -14,7 +14,6 @@ import MessageUI
 
 class HomeViewController: UIViewController, ModalController, Stylable {
     
-    
     var theme: ColorTheme
     var network: GlobalNetwork
     var builder: HomeViewControllerBuilder
@@ -38,17 +37,19 @@ class HomeViewController: UIViewController, ModalController, Stylable {
     var image2PercentageLabel: UILabel!
     var commentaryMessageLabel: UILabel!
     var uploadInstructionLabel: UILabel!
+    var scoreLeaderBoard: ScoreView!
     var resultsButton: ResultsButton!
     var postMessageLabel: UILabel!
     var postButton: PostButton!
+    var noPostsAvailableView: NoPostsAvailableView!
     
     var pastGameStatus: GameStatus?
     enum GameStatus {
         
         case win
         case lose
-        case consecutiveLose
-        case consecutiveWin
+//        case consecutiveLose
+//        case consecutiveWin
         
         var commentary: String {
             let randNum = Int.random(in: 0 ..< 4)
@@ -59,12 +60,6 @@ class HomeViewController: UIViewController, ModalController, Stylable {
             case .lose:
                 let strings = ["Damn.. You guessed wrong.. 0 pts.", "Nope! 0 pts.", "Unlucky! You got 0 pts", "Close! 0 pts"]
                 return strings[randNum]
-            case .consecutiveLose:
-                let strings = ["Unfortunate! Wrong again.. 0 pts", "Not correct! 0 pts.", "Wrong again! 0 pts.", "Try again! 0 pts"]
-                return strings[randNum]
-            case .consecutiveWin:
-                let strings = ["Great! You're right again! 2 pts", "Wow! Amazing! 2 pts", "Holy sh*t! You're on fire! 2 pts", "Awesome again! 2 pts"]
-                return strings[randNum]
             }
         }
         
@@ -72,10 +67,8 @@ class HomeViewController: UIViewController, ModalController, Stylable {
             switch self {
             case .win:
                 return 1
-            case .lose, .consecutiveLose:
+            case .lose:
                 return 0
-            case .consecutiveWin:
-                return 2
             }
         }
         
@@ -119,7 +112,10 @@ class HomeViewController: UIViewController, ModalController, Stylable {
         
         if self.builder == .vote {
             self.hideAnswer()
+            noPostsAvailableView = NoPostsAvailableView(theme: self.theme)
         }
+        
+        scoreLabel.alpha = 0.0  //eliminate for now
         
     }
 
@@ -137,13 +133,14 @@ class HomeViewController: UIViewController, ModalController, Stylable {
     func initializeValue(){
         
         if self.builder == .vote {
+            
             profileButton.setImage(UIImage(named: "profileImage")!.withRenderingMode(UIImage.RenderingMode.alwaysTemplate), for: .normal)
             messageLabel.text = "Tap on the best image to earn points"
             image1View.image = UIImage(named: "sample1")
             image2View.image = UIImage(named: "sample2")
             image1PercentageLabel.text = "( 48% )"
             image2PercentageLabel.text = "( 52 % )"
-            commentaryMessageLabel.text = "Very close! 0 pts"
+            commentaryMessageLabel.text = "Streak"
             postMessageLabel.text = "Post yours to find your best image"
             scoreLabel.text = "0 pts"
             
@@ -175,7 +172,7 @@ class HomeViewController: UIViewController, ModalController, Stylable {
             secondImagePicked = UITapGestureRecognizer(target: self, action: #selector(self.secondImageVoted))
             
             profileButton.addTarget(self, action: #selector(self.toProfile), for: .touchUpInside)
-            resultsButton.addTarget(self, action: #selector(self.resultsButtonPressed), for: .touchUpInside)
+//            resultsButton.addTarget(self, action: #selector(self.resultsButtonPressed), for: .touchUpInside)
             postButton.addTarget(self, action: #selector(self.mainButtonPressed), for: .touchUpInside)
         }else{
             firstImagePicked = UITapGestureRecognizer(target: self, action: #selector(self.firstImagePressed))
@@ -247,7 +244,7 @@ class HomeViewController: UIViewController, ModalController, Stylable {
         
         
         commentaryMessageLabel = UILabel()
-        commentaryMessageLabel.font = self.builder == .vote ? self.getSmallText() : self.getNormalFont()
+        commentaryMessageLabel.font = self.builder == .vote ? self.getScoreFont() : self.getNormalFont()
         commentaryMessageLabel.textColor = self.getTextColor()
         commentaryMessageLabel.translatesAutoresizingMaskIntoConstraints = false
         commentaryMessageLabel.adjustsFontSizeToFitWidth = true
@@ -271,6 +268,9 @@ class HomeViewController: UIViewController, ModalController, Stylable {
             profileButton.backgroundColor = .clear
             profileButton.imageView?.tintColor = self.getTextColor()
             
+            scoreLeaderBoard = ScoreView(theme: self.theme)
+            scoreLeaderBoard.translatesAutoresizingMaskIntoConstraints = false
+            
             image1PercentageLabel = UILabel()
             image1PercentageLabel.font = self.getSmallText()
             image1PercentageLabel.textColor = self.getTextColor()
@@ -285,7 +285,7 @@ class HomeViewController: UIViewController, ModalController, Stylable {
             image2PercentageLabel.adjustsFontSizeToFitWidth = true
             image2PercentageLabel.textAlignment = .center
             
-            resultsButton = ResultsButton(title: "See Your Results", theme: self.theme)
+            //resultsButton = ResultsButton(title: "See Your Results", theme: self.theme)
             
             
         }else{
@@ -312,7 +312,8 @@ class HomeViewController: UIViewController, ModalController, Stylable {
             self.view.addSubview(profileButton)
             self.view.addSubview(image1PercentageLabel)
             self.view.addSubview(image2PercentageLabel)
-            self.view.addSubview(resultsButton)
+            self.view.addSubview(scoreLeaderBoard)
+//            self.view.addSubview(resultsButton)
             self.view.addSubview(scoreLabel)
         }else{
             self.view.addSubview(uploadInstructionLabel)
@@ -369,12 +370,18 @@ class HomeViewController: UIViewController, ModalController, Stylable {
             
             commentaryMessageLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
             commentaryMessageLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-            commentaryMessageLabel.topAnchor.constraint(equalTo: image1View.bottomAnchor, constant: 45).isActive = true
+            commentaryMessageLabel.topAnchor.constraint(equalTo: image1View.bottomAnchor, constant: 35).isActive = true
             
-            resultsButton.bottomAnchor.constraint(equalTo: circleBackground.bottomAnchor, constant: -70).isActive = true
-            resultsButton.widthAnchor.constraint(equalToConstant: 280).isActive = true
-            resultsButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-            resultsButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+            scoreLeaderBoard.bottomAnchor.constraint(equalTo: circleBackground.bottomAnchor, constant: -40).isActive = true
+            scoreLeaderBoard.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive = true
+            scoreLeaderBoard.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive = true
+            scoreLeaderBoard.topAnchor.constraint(equalTo: commentaryMessageLabel.bottomAnchor).isActive = true
+            scoreLeaderBoard.heightAnchor.constraint(equalToConstant: 80).isActive = true
+            
+//            resultsButton.bottomAnchor.constraint(equalTo: circleBackground.bottomAnchor, constant: -70).isActive = true
+//            resultsButton.widthAnchor.constraint(equalToConstant: 280).isActive = true
+//            resultsButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//            resultsButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
             
             postMessageLabel.topAnchor.constraint(equalTo: circleBackground.bottomAnchor, constant: 40).isActive = true
             postMessageLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -10).isActive = true
@@ -432,14 +439,26 @@ class HomeViewController: UIViewController, ModalController, Stylable {
         
     }
     
+    func directUserToSignIn(){
+        self.network.logout()
+        if let navigator = self.navigationController {
+            navigator.pushViewController(LoginViewController(network: self.network), animated: false)
+        }
+    }
+    
     func configure(){
         
         if self.builder == .vote {
-            guard let firebaseUserId = self.network.firUserId else { return }
+            
+            guard let firebaseUserId = self.network.firUserId else {
+                self.directUserToSignIn()
+                return
+            }
+            
             self.network.queryUser(userId: firebaseUserId) { (user: UserData?, error: Error?) in
+                
                 if error != nil {
-                    print("error in querying user")
-                    print(error.debugDescription)
+                    self.directUserToSignIn()
                     return
                 }
                 
@@ -447,14 +466,38 @@ class HomeViewController: UIViewController, ModalController, Stylable {
                 
                 self.network.user = user
                 self.scoreLabel.text = String(user.points) + " pts"
+                self.scoreLeaderBoard.updateScore(bestScore: user.maxPoints, currentScore: 0)
                 
                 self.network.getPublicComparison(userId: user.userId, completion: { (postsToBeVoted) in
                     
+                    print(postsToBeVoted)
+                    
                     self.queue.enqueue(postsToBeVoted)
                     self.enableVoting()
+                    
                 })
             }
         }
+        
+    }
+    
+    func noPostsAvailable(shouldDisplay: Bool){
+        if shouldDisplay {
+            noPostsAvailableView.translatesAutoresizingMaskIntoConstraints = false
+            noPostsAvailableView.backgroundColor = self.getSecondaryBackgroundColor()
+            self.view.addSubview(noPostsAvailableView)
+            
+            noPostsAvailableView.topAnchor.constraint(equalTo: image1View.topAnchor).isActive = true
+            noPostsAvailableView.bottomAnchor.constraint(equalTo: image1View.bottomAnchor).isActive = true
+            noPostsAvailableView.leftAnchor.constraint(equalTo: image1View.leftAnchor).isActive = true
+            noPostsAvailableView.rightAnchor.constraint(equalTo: image2View.rightAnchor).isActive = true
+        }else{
+            noPostsAvailableView.removeFromSuperview()
+        }
+        
+    }
+    
+    func continuouslyEnqueue() {
         
     }
     
@@ -474,6 +517,10 @@ extension HomeViewController: CustomAlertViewDelegate {
 extension Stylable where Self: HomeViewController {
     func getTitleFont() -> UIFont {
         return UIFont(name: "RockoFLF-Bold", size: 45)!
+    }
+    
+    func getScoreFont() -> UIFont {
+        return UIFont(name: "RockoFLF-Bold", size: 35)!
     }
 }
 

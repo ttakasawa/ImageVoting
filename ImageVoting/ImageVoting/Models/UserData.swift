@@ -21,10 +21,12 @@ class UserData: Codable {
     
     var comparisonRecordKeys: [String]?
     var points: Int
+    var maxPoints: Int
     
     init (userId: String) {
         self.userId = userId
         self.points = 0
+        self.maxPoints = 0
         self.comparisonRecordKeys = []
     }
     

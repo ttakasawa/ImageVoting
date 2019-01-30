@@ -33,6 +33,8 @@
 		B23D6B4421CB529300E562AD /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D6B4321CB529300E562AD /* ModalViewController.swift */; };
 		B23D6B4621CC809400E562AD /* PublicVoteEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D6B4521CC809400E562AD /* PublicVoteEndpoint.swift */; };
 		B23D6B4821CE162B00E562AD /* StorageEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D6B4721CE162B00E562AD /* StorageEndpoint.swift */; };
+		B25EC1AE21F2848300D7A352 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EC1AD21F2848300D7A352 /* ScoreView.swift */; };
+		B25EC1B021F8213C00D7A352 /* NoPostsAvailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EC1AF21F8213C00D7A352 /* NoPostsAvailableView.swift */; };
 		B2C6017521C59A290028211B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C6017421C59A290028211B /* AppDelegate.swift */; };
 		B2C6017721C59A290028211B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C6017621C59A290028211B /* HomeViewController.swift */; };
 		B2C6017D21C59A290028211B /* ImageVoting.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2C6017B21C59A290028211B /* ImageVoting.xcdatamodeld */; };
@@ -109,6 +111,8 @@
 		B23D6B4321CB529300E562AD /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		B23D6B4521CC809400E562AD /* PublicVoteEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicVoteEndpoint.swift; sourceTree = "<group>"; };
 		B23D6B4721CE162B00E562AD /* StorageEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageEndpoint.swift; sourceTree = "<group>"; };
+		B25EC1AD21F2848300D7A352 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		B25EC1AF21F8213C00D7A352 /* NoPostsAvailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoPostsAvailableView.swift; sourceTree = "<group>"; };
 		B2C6017121C59A290028211B /* ImageVoting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageVoting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C6017421C59A290028211B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2C6017621C59A290028211B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -446,6 +450,8 @@
 				B2C601C921C6E5500028211B /* CircleView.swift */,
 				B2C601CB21C6E5E00028211B /* CircleImageView.swift */,
 				B22C854D21D7DD9200476CE5 /* UserBasicInfoView.swift */,
+				B25EC1AD21F2848300D7A352 /* ScoreView.swift */,
+				B25EC1AF21F8213C00D7A352 /* NoPostsAvailableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -684,6 +690,7 @@
 				B2C601DB21C83A1D0028211B /* DeviceSize.swift in Sources */,
 				B2C601B121C6C3E50028211B /* UserEndpoint.swift in Sources */,
 				B22C853F21D3C74300476CE5 /* Queue.swift in Sources */,
+				B25EC1B021F8213C00D7A352 /* NoPostsAvailableView.swift in Sources */,
 				B22C852F21D0B7D100476CE5 /* InputTextfield.swift in Sources */,
 				B22C852521D082B000476CE5 /* HTTPEndpoint.swift in Sources */,
 				B22C855321DA154300476CE5 /* UIImageExtensions.swift in Sources */,
@@ -711,6 +718,7 @@
 				B2C601A721C5A7F90028211B /* Stylable.swift in Sources */,
 				B22C854A21D7BE7100476CE5 /* ContactsTableViewCell.swift in Sources */,
 				B22C855621DD2C4900476CE5 /* VoteActionExtension.swift in Sources */,
+				B25EC1AE21F2848300D7A352 /* ScoreView.swift in Sources */,
 				B23D6B4821CE162B00E562AD /* StorageEndpoint.swift in Sources */,
 				B2C601AE21C5BECA0028211B /* FirebaseEndpoint.swift in Sources */,
 				B23D6B4421CB529300E562AD /* ModalViewController.swift in Sources */,

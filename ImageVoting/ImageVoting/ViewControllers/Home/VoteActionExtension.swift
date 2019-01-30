@@ -12,9 +12,18 @@ import UIKit
 extension HomeViewController {
     // Actions of HomeViewController when self.builder == .vote
     
-    func updateUserPoints(user: UserData, points: Int) {
-        user.points = user.points + points
-        self.scoreLabel.text = String(user.points) + " pts"
+    func updateUserPoints(user: UserData, isCorrect: Bool) {
+        if isCorrect {
+            user.points += 1
+        }else{
+            user.points = 0
+        }
+        
+        if user.points >= user.maxPoints {
+            user.maxPoints = user.points
+        }
+        //self.scoreLabel.text = String(user.points) + " pts"
+        self.scoreLeaderBoard.updateScore(bestScore: user.maxPoints, currentScore: user.points)
     }
     
     func hideAnswer(){
@@ -57,33 +66,33 @@ extension HomeViewController {
     
     
     
-    func evaluateAnswer(correctness: Bool) -> Int {
-        
-        var currentStatus: GameStatus!
-        
-        if (pastGameStatus != nil) {
-            if pastGameStatus == .win && correctness == true {
-                currentStatus = .consecutiveWin
-            }else if pastGameStatus == .lose && correctness == false {
-                currentStatus = .consecutiveLose
-            }else if (pastGameStatus == .win || pastGameStatus == .consecutiveWin) && correctness == false {
-                currentStatus = .lose
-            }else{
-                currentStatus = .win
-            }
-        }else{
-            if correctness == true {
-                currentStatus = .win
-            }else {
-                currentStatus = .lose
-            }
-        }
-        
-        self.commentaryMessageLabel.text = currentStatus.commentary
-        pastGameStatus = currentStatus
-        
-        return currentStatus.pointsEarned
-    }
+//    func evaluateAnswer(correctness: Bool) -> Int {
+//
+//        var currentStatus: GameStatus!
+//
+//        if (pastGameStatus != nil) {
+//            if pastGameStatus == .win && correctness == true {
+//                currentStatus = .consecutiveWin
+//            }else if pastGameStatus == .lose && correctness == false {
+//                currentStatus = .consecutiveLose
+//            }else if (pastGameStatus == .win || pastGameStatus == .consecutiveWin) && correctness == false {
+//                currentStatus = .lose
+//            }else{
+//                currentStatus = .win
+//            }
+//        }else{
+//            if correctness == true {
+//                currentStatus = .win
+//            }else {
+//                currentStatus = .lose
+//            }
+//        }
+//
+//        //self.commentaryMessageLabel.text = currentStatus.commentary
+//        pastGameStatus = currentStatus
+//
+//        return currentStatus.pointsEarned
+//    }
     
     func getPercentageFormat(percent: Int?) -> String {
         return "( " + String(percent ?? 50) + "% )"
@@ -94,11 +103,17 @@ extension HomeViewController {
         dequeuePost()
     }
     
+    func fetchMoreComparisons(){
+        //MustDo: fetch more comparison
+    }
+    
     func dequeuePost(){
         //dequeue from queue
         //set value with new peak()
         
         if let postToBeVoted = self.queue.dequeue() {
+            self.noPostsAvailable(shouldDisplay: false)
+            
             self.image1PercentageLabel.text = getPercentageFormat(percent: postToBeVoted.image1Percentage)
             self.image2PercentageLabel.text = getPercentageFormat(percent: postToBeVoted.image2Percentage)
             
@@ -106,6 +121,11 @@ extension HomeViewController {
             self.image2View.image = postToBeVoted.img2 ?? UIImage()
         }else{
             print("notrhing to vote")
+            self.noPostsAvailable(shouldDisplay: true)
+        }
+        
+        if self.queue.length < 10 {
+            self.fetchMoreComparisons()
         }
         
         prepareNext()
@@ -115,12 +135,15 @@ extension HomeViewController {
     func prepareNext(){
         
         if let nextPost = self.queue.peek() {
+            print("peek")
             self.network.downloadImage(stringUrl: nextPost.image1Url) { (img) in
                 nextPost.img1 = img
             }
             self.network.downloadImage(stringUrl: nextPost.image2Url) { (img) in
                 nextPost.img2 = img
             }
+        }else{
+            print("nothing")
         }
         
     }
@@ -158,8 +181,8 @@ extension HomeViewController {
         self.switchInteractionOfImageViews(enabled: false)
         self.placeHeartViewOnImageView(imgView: imgView)
         let correctAns = self.showAnswer()
-        let points = self.evaluateAnswer(correctness: correctAns == imgView ? true : false)
-        self.updateUserPoints(user: user, points: points)
+        //let points = self.evaluateAnswer(correctness: correctAns == imgView ? true : false)
+        self.updateUserPoints(user: user, isCorrect: correctAns == imgView ? true : false)
         
         self.submitVote { (success) in
             self.hideAnswer()

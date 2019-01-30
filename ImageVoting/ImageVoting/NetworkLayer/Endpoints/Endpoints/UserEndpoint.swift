@@ -17,11 +17,9 @@ enum UserEndpoint: FirebaseEndpoint {
     case getAllResultKeys(userId: String)
     case getAllResults(postId: String)
     
-    
-    
     case getLatestResult(userId: String)
     
-    
+    case copyVotableTable(userId: String)
     
     var path: String? {
         switch self {
@@ -35,6 +33,8 @@ enum UserEndpoint: FirebaseEndpoint {
             return "Post-CreatorTable/\(userId)"
         case .getAllResults(let postId):
             return "Post/\(postId)"
+        case .copyVotableTable( _):
+            return "copyVotableTable"
         }
     }
     
@@ -44,6 +44,10 @@ enum UserEndpoint: FirebaseEndpoint {
             return nil
         case .updateUser(_, let user):
             return self.toData(object: user)
+        case .copyVotableTable(let userId):
+            return [
+                "userId" : userId
+            ]
         }
     }
     
@@ -55,6 +59,8 @@ enum UserEndpoint: FirebaseEndpoint {
             return EndpointsType.storeSingleObject
         case .getAllResultKeys( _), .getLatestResult( _):
             return EndpointsType.queryList
+        case .copyVotableTable( _):
+            return EndpointsType.httpRequest
         default:
             return nil
         }

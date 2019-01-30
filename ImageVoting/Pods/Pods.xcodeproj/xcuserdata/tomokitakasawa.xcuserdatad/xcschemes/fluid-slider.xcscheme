@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3C84B1C572091D6A34E78654AA48E289"
+               BlueprintIdentifier = "2F46857A8D79EB3AC57287AF4B74894D"
                BuildableName = "fluid_slider.framework"
                BlueprintName = "fluid-slider"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3C84B1C572091D6A34E78654AA48E289"
+            BlueprintIdentifier = "2F46857A8D79EB3AC57287AF4B74894D"
             BuildableName = "fluid_slider.framework"
             BlueprintName = "fluid-slider"
             ReferencedContainer = "container:Pods.xcodeproj">

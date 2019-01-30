@@ -15,6 +15,7 @@ protocol FontStylable {
     func getNormalFont() -> UIFont
     func getSubNormalFont() -> UIFont
     func getSmallText() -> UIFont
+    func getScoreFont() -> UIFont
 }
 
 
@@ -37,5 +38,9 @@ extension FontStylable {
     
     func getSmallText() -> UIFont {
         return UIFont(name: "RockoFLF", size: 18)!
+    }
+    
+    func getScoreFont() -> UIFont {
+        return UIFont(name: "RockoFLF-Bold", size: 35)!
     }
 }

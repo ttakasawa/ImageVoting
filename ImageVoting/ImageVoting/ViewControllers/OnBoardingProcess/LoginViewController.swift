@@ -105,17 +105,44 @@ class LoginViewController: UIViewController, Stylable {
         self.navigationController?.navigationBar.isHidden = true
     }
     
+    func copyPostTableFromDefault(userId: String, completion: @escaping (_ success: Bool) -> Void){
+        //copyVotableTable
+        self.network.httpRequest(endpoint: UserEndpoint.copyVotableTable(userId: userId)) { (success, error) in
+            if error != nil {
+                print(error.debugDescription)
+                completion(false)
+                return
+            }else{
+                completion(true)
+            }
+        }
+    }
     
     func loginSuccess(button: TransitionButton, user: UserData) {
         
         self.network.user = user
+        self.network.firUserId = user.userId
         
-        button.stopAnimation(animationStyle: .expand, completion: {
-            
-            if let navigator = self.navigationController {
-                navigator.pushViewController(HomeViewController(builder: HomeViewControllerBuilder.vote, network: self.network), animated: false)
+        
+        self.copyPostTableFromDefault(userId: user.userId) { (success) in
+            if success {
+                button.stopAnimation(animationStyle: .expand, completion: {
+                    
+                    if let navigator = self.navigationController {
+                        navigator.pushViewController(HomeViewController(builder: HomeViewControllerBuilder.vote, network: self.network), animated: false)
+                    }
+                })
+            }else{
+                button.stopAnimation(animationStyle: .expand, completion: {
+                    
+                    if let navigator = self.navigationController {
+                        navigator.pushViewController(HomeViewController(builder: HomeViewControllerBuilder.vote, network: self.network), animated: false)
+                    }
+                })
             }
-        })
+        }
+
+        
     }
     
     
